@@ -90,11 +90,37 @@ const logout = async () => {
     localStorage.removeItem('userInfo');
   }
 };
-  return (
-    <AuthContext.Provider value={{ user, loading, login, logout, authAxios, token }}>
-      {children}
-    </AuthContext.Provider>
-  );
+// ... existing code
+// Add this inside the AuthProvider component
+const register = async (name, email, password) => {
+  try {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/register`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, password }),
+      credentials: 'include',
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      setUser(data);
+      localStorage.setItem('userInfo', JSON.stringify(data));
+      return { success: true };
+    } else {
+      return { success: false, message: data.message || 'Registration failed' };
+    }
+  } catch (error) {
+    console.error('Registration error:', error);
+    return { success: false, message: 'Server connection failed' };
+  }
 };
 
+// ... in your return statement, make sure 'register' is included:
+return (
+  <AuthContext.Provider value={{ user, loading, login, logout, register, authAxios, token }}>
+    {children}
+  </AuthContext.Provider>
+);
+};
 export const useAuth = () => useContext(AuthContext);

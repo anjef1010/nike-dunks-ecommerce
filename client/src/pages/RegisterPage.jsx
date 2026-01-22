@@ -35,7 +35,8 @@ const RegisterPage = () => {
       return;
     }
 
-    const result = await register({ name, username, email, password });
+    // We only pass name, email, and password as defined in our Context function
+const result = await register(name, email, password);
 
     if (result.success) {
       toast.success('Registry Successful. Please Authorize.');
