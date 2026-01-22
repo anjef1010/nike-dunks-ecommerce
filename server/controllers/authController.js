@@ -64,13 +64,23 @@ export const registerUser = asyncHandler(async (req, res) => {
 // @route   POST /api/auth/login
 // @access  Public
 export const loginUser = asyncHandler(async (req, res) => {
-  const { email, password } = req.body;
-  console.log(`Login attempt for: ${email}`); // <--- ADD THIS
+  // This line handles both formats: {email, password} OR {email: {email, password}}
+  const email = req.body.email?.email || req.body.email;
+  const password = req.body.email?.password || req.body.password;
+  console.log("Data received:", email, password);
+
+  console.log(`Attempting login for: ${email}`);
+
+  // Validation
+  if (!email || !password) {
+    res.status(400);
+    throw new Error('Please provide both email and password');
+  }
 
   const user = await User.findOne({ email });
-  console.log(`User found: ${user ? 'Yes' : 'No'}`); // <--- ADD THIS
 
   if (user && (await user.matchPassword(password))) {
+    // This helper sends the HTTP-only cookie
     sendTokenResponse(user, 200, res);
   } else {
     res.status(401);

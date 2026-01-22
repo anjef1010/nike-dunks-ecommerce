@@ -11,25 +11,27 @@ export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem('token') || null);
 
   const authAxios = useMemo(() => {
-    const instance = axios.create({ baseURL: import.meta.env.VITE_API_URL });
-
-    instance.interceptors.request.use((config) => {
-      const currentToken = localStorage.getItem('token');
-      if (currentToken) config.headers.Authorization = `Bearer ${currentToken}`;
-      return config;
+    // Create axios instance with credentials enabled for cookies
+    const instance = axios.create({ 
+      baseURL: import.meta.env.VITE_API_URL,
+      withCredentials: true 
     });
 
+    // Interceptor to handle global errors (like 401 Unauthorized)
     instance.interceptors.response.use(
       (res) => res,
       (err) => {
         if (err.response?.status === 401) {
-          localStorage.removeItem('token');
-          setToken(null);
+          // Clear user state if the session/cookie is invalid or expired
+          localStorage.removeItem('userInfo');
           setUser(null);
+          // If you were using a 'token' state, clear it here too
+          if (typeof setToken === 'function') setToken(null);
         }
         return Promise.reject(err);
       }
     );
+
     return instance;
   }, []);
 
