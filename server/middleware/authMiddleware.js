@@ -6,8 +6,7 @@ export const protect = asyncHandler(async (req, res, next) => {
   let token;
 
   // Check for token in cookies or Authorization header
-  token = req.cookies?.jwt || (req.headers.authorization?.startsWith('Bearer') && req.headers.authorization.split(' ')[1]);
-
+ token = req.cookies?.token || (req.headers.authorization?.startsWith('Bearer') && req.headers.authorization.split(' ')[1]);
   if (token) {
     try {
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
