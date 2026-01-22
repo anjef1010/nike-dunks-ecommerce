@@ -48,3 +48,20 @@ export const updateUser = asyncHandler(async (req, res) => {
         throw new Error('User not found');
     }
 });
+// @desc    Delete user
+export const deleteUser = asyncHandler(async (req, res) => {
+    const user = await User.findById(req.params.id);
+
+    if (user) {
+        // Prevent admin from deleting themselves
+        if (user._id.toString() === req.user._id.toString()) {
+            res.status(400);
+            throw new Error('You cannot delete your own admin account');
+        }
+        await User.deleteOne({ _id: user._id });
+        res.json({ message: 'User removed successfully' });
+    } else {
+        res.status(404);
+        throw new Error('User not found');
+    }
+});
