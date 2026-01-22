@@ -1,0 +1,211 @@
+/* --- RESET & VARIABLES --- */
+.about-luxury-page {
+  --luxury-gold: #c5a059;
+  --dark-matte: #0a0a0a;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+/* 1. HERO SECTION - Fixed the Z-index and Stacking */
+.about-hero-full {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.85)), 
+                    url('../assets/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  z-index: 1;
+}
+
+.hero-content-center {
+  z-index: 10;
+  max-width: 900px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-main-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  line-height: 0.9;
+  margin: 20px 0;
+}
+
+.reveal-tag {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 0.75rem;
+  color: var(--luxury-gold);
+  font-weight: 700;
+}
+
+/* 2. GLASS STATS - Fixed Positioning */
+.glass-stats-container {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px 50px;
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.stat-item h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--luxury-gold);
+  margin: 0;
+}
+
+.stat-item p {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 5px 0 0;
+}
+
+/* 3. NARRATIVE - Fixed Grid Overlap */
+.narrative-section { padding: 100px 0; }
+.container-narrow { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+.narrative-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.gold-label {
+  color: var(--luxury-gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 800;
+  font-size: 0.75rem;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.narrative-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+.thailand-workshop-bg {
+  width: 100%;
+  height: 500px;
+  background-image: url('../assets/workshop.png');
+  background-size: cover;
+  background-position: center;
+  box-shadow: 20px 20px 0px #f4f4f4;
+  position: relative;
+}
+
+/* 4. COMPARISON - Responsive Flex */
+.comparison-vault {
+  background: var(--dark-matte);
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.serif-title { font-family: 'Playfair Display', serif; font-size: 3.5rem; }
+.serif-title.white { color: white; }
+
+.gold-underline {
+  width: 60px;
+  height: 2px;
+  background: var(--luxury-gold);
+  margin: 20px auto 60px;
+}
+
+.comparison-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.comp-card { flex: 1; }
+
+.retail-image-bg, .master-image-bg {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  filter: grayscale(1);
+  transition: 0.5s ease;
+}
+
+.retail-image-bg { background-image: url('../assets/1.jpg'); }
+.master-image-bg { background-image: url('../assets/2.jpg'); }
+
+.comp-card:hover .retail-image-bg, 
+.comp-card:hover .master-image-bg { filter: grayscale(0); }
+
+.tag-label {
+  position: absolute;
+  top: 20px; left: 20px;
+  background: #000;
+  padding: 6px 15px;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+.tag-label.gold { background: var(--luxury-gold); color: black; font-weight: 700; }
+
+.vs-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--luxury-gold);
+  font-style: italic;
+}
+
+/* 5. CTA - Clean Architectural Button */
+.about-footer-cta {
+  padding: 150px 0;
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                    url('../assets/About.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  text-align: center;
+}
+
+.btn-gold-fill {
+  margin-top: 40px;
+  background: var(--luxury-gold);
+  color: white;
+  border: none;
+  padding: 20px 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-gold-fill:hover { background: #fff; color: var(--luxury-gold); }
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 992px) {
+  .narrative-grid, .comparison-layout {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .glass-stats-container { padding: 20px; gap: 20px; }
+  .retail-image-bg, .master-image-bg { height: 300px; }
+  .serif-title { font-size: 2.5rem; }
+}

@@ -1,0 +1,211 @@
+/* client/src/css/LoginPage.css */
+
+/* 1. ROOT LOCK: Removes all page scrolling and sets the dark luxury base */
+.vault-auth-page {
+  background-color: #0a0a0a;
+  height: 100vh; /* Exactly the height of the screen */
+  width: 100vw; /* Exactly the width of the screen */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Disables the scrollbar */
+  position: fixed; /* Locks the page in place */
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.vault-container {
+  display: flex;
+  width: 100%;
+  height: 100%; /* Matches the locked viewport height */
+  background: #000;
+}
+
+/* 2. LEFT SIDE: EDITORIAL CANVAS (Background Image Control) */
+.vault-canvas {
+  flex: 1.2;
+  position: relative;
+  background-color: #111;
+  /* Image Logic: Dark overlay + High-end visual */
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+                    url('https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=1974&auto=format&fit=crop'); 
+  background-size: cover; /* Ensures image fills the area without stretching */
+  background-position: center center; /* Keeps focal point in the middle */
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  height: 100%;
+}
+
+.canvas-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 500px;
+}
+
+.floating-logo {
+  width: 120px;
+  margin-bottom: 40px;
+  filter: brightness(0) invert(1) drop-shadow(0 0 15px rgba(255,255,255,0.2));
+  animation: float 6s ease-in-out infinite;
+}
+
+.curator-label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 0.65rem;
+  color: #c5a059; /* Luxury Gold */
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.canvas-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  line-height: 0.9;
+  margin-bottom: 20px;
+}
+
+.canvas-text p {
+  font-size: 0.9rem;
+  color: #888;
+  letter-spacing: 1px;
+  line-height: 1.8;
+}
+
+/* 3. RIGHT SIDE: FORM PANEL */
+.vault-form-panel {
+  flex: 0.8;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  height: 100%;
+  overflow-y: auto; /* Only allow the form side to scroll if the screen is tiny */
+}
+
+.form-inner {
+  width: 100%;
+  max-width: 380px;
+  padding: 20px 0;
+}
+
+.form-header {
+  margin-bottom: 50px;
+}
+
+.form-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.form-header p {
+  color: #666;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* LUXURY INPUTS */
+.luxury-form .input-group {
+  margin-bottom: 25px;
+}
+
+.luxury-input {
+  width: 100%;
+  padding: 18px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.95rem;
+  color: #000;
+  transition: all 0.3s ease;
+  border-radius: 0;
+}
+
+.luxury-input:focus {
+  outline: none;
+  border-bottom-color: #c5a059;
+}
+
+.luxury-input::placeholder {
+  color: #aaa;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+}
+
+/* SUBMIT BUTTON */
+.vault-submit-btn {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  border: 1px solid #000;
+  padding: 20px;
+  margin-top: 30px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vault-submit-btn:hover {
+  background: #c5a059;
+  border-color: #c5a059;
+  letter-spacing: 5px;
+}
+
+.vault-submit-btn:disabled {
+  background: #333;
+  cursor: wait;
+}
+
+/* FOOTER */
+.vault-footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.gold-link {
+  color: #c5a059;
+  text-decoration: none;
+  font-weight: 700;
+  margin-left: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* 4. ANIMATIONS & RESPONSIVENESS */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@media (max-width: 1024px) {
+  .vault-canvas { 
+    display: none; 
+  }
+  .vault-form-panel { 
+    flex: 1; 
+    height: 100vh; 
+    overflow-y: auto;
+  }
+  .vault-auth-page {
+    position: relative; 
+    overflow-y: auto; 
+    height: auto;
+  }
+}

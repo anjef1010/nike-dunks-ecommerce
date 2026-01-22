@@ -1,0 +1,235 @@
+/* ProductManagement.css */
+
+.admin-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.admin-page h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* Table Styles */
+.table-responsive {
+  overflow-x: auto;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.table thead th {
+  background-color: #343a40;
+  color: white;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.table tbody td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.table tbody tr:nth-of-type(even) {
+  background-color: #f8f9fa;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.table tbody tr:last-of-type td {
+  border-bottom: none;
+}
+
+/* Button Styles */
+.btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+}
+
+.btn-info {
+  background-color: #17a2b8;
+  color: white;
+  margin-right: 8px;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+.btn-sm {
+  padding: 6px 10px;
+  font-size: 0.8rem;
+}
+
+/* Form Styles */
+.card {
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.form-control:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+textarea.form-control {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Utility Classes */
+.text-danger {
+  color: #e74c3c;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .table thead {
+    display: none;
+  }
+
+  .table tbody tr {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .table tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 15px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .table tbody td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    margin-right: 15px;
+  }
+
+  .table tbody td:last-child {
+    border-bottom: none;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .btn-info {
+    margin-right: 0;
+  }
+}
+/* Image Upload Styles */
+.image-upload-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-preview {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.image-preview img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Button Styles */
+.btn-outline-secondary {
+  background-color: transparent;
+  border: 1px solid #6c757d;
+  color: #6c757d;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #6c757d;
+  color: white;
+}

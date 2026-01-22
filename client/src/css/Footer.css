@@ -1,0 +1,24 @@
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 1.5rem 0;
+  /* margin-top: 30px; */ /* Remove margin-top as fixed position handles placement */
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+
+  /* New properties for fixed position at the bottom */
+  position: -webkit-sticky; /* Makes the element fixed relative to the viewport */
+  bottom: 0;      /* Aligns the bottom edge of the footer to the bottom of the viewport */
+  width: 100%;    /* Ensures the footer spans the full width of the viewport */
+  z-index: 1000;  /* Optional: Ensures the footer stays on top of other content */
+}
+.container-text-center{
+  text-align: center;
+}
+
+.footer .container {
+  padding: 0 20px;
+}
+
+.footer p {
+  font-size: 0.9rem;
+}

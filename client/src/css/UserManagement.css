@@ -1,0 +1,99 @@
+/* client/src/css/AdminComponents.css (or add to AdminDashboardPage.css) */
+
+.admin-page h2 {
+    font-size: 1.8rem;
+    color: #34495e; /* Darker blue/grey for headings */
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.admin-page p {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+.admin-page table {
+    width: 100%;
+    border-collapse: collapse; /* Removes spacing between table cells */
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Subtle shadow for the table */
+    border-radius: 8px; /* Rounded corners for the table */
+    overflow: hidden; /* Ensures rounded corners apply to content */
+}
+
+.admin-page th,
+.admin-page td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Light separator for rows */
+    font-size: 0.95rem;
+}
+
+.admin-page th {
+    background-color: #f2f2f2; /* Light grey background for headers */
+    color: #333;
+    font-weight: 600; /* Slightly bolder header text */
+    text-transform: uppercase; /* Uppercase for headers */
+}
+
+.admin-page tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Zebra striping for readability */
+}
+
+.admin-page tbody tr:hover {
+    background-color: #e9f0f7; /* Hover effect for rows */
+    cursor: pointer; /* Indicate interactivity */
+}
+
+/* Specific styling for the ID column if needed */
+.admin-page td:first-child {
+    font-family: 'monospace'; /* Monospace for IDs for better readability */
+    font-size: 0.85rem;
+    color: #555;
+}
+
+/* Optional: Styling for role badges */
+.admin-page .role-badge {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+    display: inline-block; /* Allows padding and margin */
+    text-align: center;
+}
+
+.admin-page .role-badge.admin {
+    background-color: #007bff; /* Blue for Admin */
+}
+
+.admin-page .role-badge.user {
+    background-color: #6c757d; /* Grey for regular User */
+}
+
+/* General button styling for admin actions (if you add actions later) */
+.admin-action-btn {
+    background-color: #007bff; /* Primary blue */
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    margin-left: 5px;
+}
+
+.admin-action-btn:hover {
+    background-color: #0056b3;
+}
+
+.admin-action-btn.delete {
+    background-color: #dc3545; /* Red for delete */
+}
+
+.admin-action-btn.delete:hover {
+    background-color: #c82333;
+}

@@ -1,0 +1,117 @@
+/* client/src/css/RegisterPage.css */
+
+/* Re-using the locked root from Login */
+.vault-auth-page.register-variant {
+  background-color: #0a0a0a;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; 
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* LEFT SIDE: Using a different luxury image for variety, or keep same for brand unity */
+.register-variant .vault-canvas {
+  flex: 1.2;
+  position: relative;
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+                    url('https://images.unsplash.com/photo-1552346154-21d32810aba3?q=80&w=2070&auto=format&fit=crop'); 
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+
+/* FORM PANEL - Optimized for slightly longer form */
+.register-variant .vault-form-panel {
+  flex: 0.8;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  height: 100%;
+  overflow-y: auto; /* Small vertical scroll only for the form if height is limited */
+}
+
+/* Customizing the inner scrollbar for luxury feel */
+.register-variant .vault-form-panel::-webkit-scrollbar {
+  width: 4px;
+}
+.register-variant .vault-form-panel::-webkit-scrollbar-thumb {
+  background: #c5a059;
+}
+
+/* Syncing with Login Styles */
+.register-variant .form-inner {
+  width: 100%;
+  max-width: 380px;
+  padding: 40px 0;
+}
+
+.register-variant .form-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+
+.register-variant .luxury-input {
+  width: 100%;
+  padding: 15px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #eee;
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease;
+  border-radius: 0;
+}
+
+.register-variant .luxury-input:focus {
+  outline: none;
+  border-bottom-color: #c5a059;
+}
+
+.register-variant .vault-submit-btn {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  border: none;
+  transition: all 0.4s ease;
+}
+
+.register-variant .vault-submit-btn:hover {
+  background: #c5a059;
+  letter-spacing: 4px;
+}
+
+.register-variant .vault-footer {
+  margin-top: 30px;
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.register-variant .gold-link {
+  color: #c5a059;
+  font-weight: 700;
+  margin-left: 8px;
+  text-decoration: none;
+}
+
+/* MOBILE FIXES */
+@media (max-width: 1024px) {
+  .register-variant .vault-canvas { display: none; }
+  .register-variant .vault-form-panel { flex: 1; height: 100vh; }
+  .vault-auth-page.register-variant { position: relative; height: auto; overflow: visible; }
+}

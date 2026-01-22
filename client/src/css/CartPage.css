@@ -1,0 +1,263 @@
+/* --- MASTER GRADE VAULT (CART) STYLES --- */
+:root {
+  --luxury-gold: #c5a059;
+  --dark-matte: #0c0c0c;
+  --soft-gray: #f9f9f9;
+  --border-color: #eee;
+}
+
+.vault-root {
+  padding: 120px 5% 60px;
+  background: #fff;
+  min-height: 100vh;
+}
+
+/* Header & Titles */
+.vault-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.btn-return {
+  background: none;
+  border: none;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vault-badge {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--luxury-gold);
+  font-weight: 800;
+}
+
+.vault-title-section {
+  margin-bottom: 50px;
+}
+
+.editorial-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.vault-subtitle {
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+}
+
+/* Empty State */
+.empty-vault-state {
+  text-align: center;
+  padding: 100px 0;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  color: #eee;
+  margin-bottom: 20px;
+}
+
+/* Vault Grid */
+.vault-grid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 60px;
+}
+
+/* Item Card */
+.vault-item-card {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  gap: 30px;
+  padding: 30px 0;
+  border-bottom: 1px solid var(--border-color);
+  align-items: center;
+}
+
+.vault-item-image {
+  background: var(--soft-gray);
+  padding: 10px;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vault-item-image img {
+  width: 100%;
+  mix-blend-mode: multiply;
+}
+
+.item-brand {
+  display: block;
+  font-size: 0.6rem;
+  color: var(--luxury-gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.item-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #000;
+  display: block;
+}
+
+.item-meta {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.qty-selector {
+  display: flex;
+  align-items: center;
+  border: 1px solid #eee;
+  width: fit-content;
+  margin-top: 15px;
+}
+
+.qty-selector button {
+  padding: 8px 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.qty-selector span {
+  padding: 0 10px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.vault-item-pricing {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.item-total-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.btn-remove {
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-remove:hover { color: #d32f2f; }
+
+/* Summary Sidebar */
+.summary-card {
+  position: sticky;
+  top: 120px;
+  background: var(--soft-gray);
+  padding: 40px;
+}
+
+.summary-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.gold-text {
+  color: var(--luxury-gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+}
+
+.summary-divider {
+  height: 1px;
+  background: #ddd;
+  margin: 20px 0;
+}
+
+.summary-row.total {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.btn-vault-action {
+  width: 100%;
+  padding: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: 0.4s;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn-vault-action.primary {
+  background: #000;
+  color: #fff;
+}
+
+.btn-vault-action.primary:hover {
+  background: var(--luxury-gold);
+}
+
+.btn-vault-action.secondary {
+  background: none;
+  border: 1px solid #000;
+  color: #000;
+  margin-top: 20px;
+}
+
+.lock-icon { font-size: 0.7rem; opacity: 0.6; }
+
+.vault-trust-footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.vault-trust-footer p {
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #aaa;
+  margin: 5px 0;
+}
+
+@media (max-width: 1024px) {
+  .vault-grid { grid-template-columns: 1fr; }
+  .summary-card { position: static; }
+}

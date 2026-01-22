@@ -1,0 +1,131 @@
+/* Header.css - Minimalist Luxury UI */
+
+.luxury-header-ui {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid #eeeeee;
+  padding: 15px 0;
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+}
+
+/* Logo Styling */
+.logo-luxury {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+}
+
+.logo-sub {
+  font-weight: 300;
+  color: #c5a059; /* Gold accent */
+}
+
+/* Nav Groups */
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-group-left {
+  display: flex;
+  gap: 30px;
+  margin-left: 50px;
+}
+
+.nav-group-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* Links */
+.nav-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #c5a059;
+}
+
+.nav-link-cta {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  background: #000;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 0; /* Sharp edges for luxury look */
+}
+
+/* Icons and Badges */
+.icon-link-luxury {
+  color: #000;
+  font-size: 1.1rem;
+  position: relative;
+  text-decoration: none;
+}
+
+.luxury-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #c5a059;
+  color: #fff;
+  font-size: 0.6rem;
+  padding: 2px 5px;
+  min-width: 15px;
+  text-align: center;
+}
+
+.logout-btn-luxury {
+  background: none;
+  border: 1px solid #ccc;
+  padding: 5px 15px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn-luxury:hover {
+  border-color: #000;
+  background: #000;
+  color: #fff;
+}
+
+.admin-tag {
+  color: #c5a059;
+  font-weight: 700;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  border: 1px solid #c5a059;
+  padding: 2px 8px;
+  text-decoration: none;
+}
