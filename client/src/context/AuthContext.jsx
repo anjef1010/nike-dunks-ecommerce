@@ -51,30 +51,43 @@ export const AuthProvider = ({ children }) => {
     loadUser();
   }, [authAxios]);
 
-  const login = async ({ email, password }) => {
-    setLoading(true);
-    try {
-      const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/login`, { email, password });
-      localStorage.setItem('token', data.token);
-      setToken(data.token);
-      setUser(data.user);
-      setLoading(false);
-      return { success: true, user: data.user }; 
-    } catch (err) {
-      setLoading(false);
-      const msg = err.response?.data?.message || 'Login failed';
-      toast.error(msg);
-      return { success: false, message: msg };
-    }
-  };
+  const login = async (email, password) => {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/login`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password }),
+    credentials: 'include', // CRITICAL: This accepts the cookie from Render
+  });
 
-  const logout = () => {
-    localStorage.removeItem('token');
-    setToken(null);
+  const data = await response.json();
+  if (response.ok) {
+    setUser(data);
+    localStorage.setItem('userInfo', JSON.stringify(data));
+    return { success: true };
+  } else {
+    return { success: false, message: data.message };
+  }
+};
+
+ 
+const logout = async () => {
+  try {
+    // 1. Call the backend to clear the HTTP-only cookie
+    await fetch(`${import.meta.env.VITE_API_URL}/api/auth/logout`, {
+      method: 'GET',
+      credentials: 'include', // CRITICAL: This allows the browser to clear the cookie
+    });
+
+    // 2. Clear local state and localStorage
     setUser(null);
-    toast.info('Logged out.');
-  };
-
+    localStorage.removeItem('userInfo');
+  } catch (error) {
+    console.error('Logout failed:', error);
+    // Even if the network fails, clear local data so user isn't stuck "logged in"
+    setUser(null);
+    localStorage.removeItem('userInfo');
+  }
+};
   return (
     <AuthContext.Provider value={{ user, loading, login, logout, authAxios, token }}>
       {children}
