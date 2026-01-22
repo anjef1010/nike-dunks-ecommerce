@@ -41,7 +41,7 @@ const HomePage = () => {
 
   return (
     <main className="home-page luxury-theme">
-      {/* Hero Section */}
+      {/* Hero Section - Background image is now handled in HomePage.css */}
       <section className="hero-section">
         <div className="hero-overlay" />
         <div className="hero-content container">
@@ -131,12 +131,11 @@ const HomePage = () => {
         ))}
       </section>
 
-      {/* About Section - Luxury Update */}
+      {/* About Section */}
       <section className="luxury-about">
         <div className="luxury-container">
           <div className="about-split">
             <div className="about-visual"> 
-              {/* This div replaces the img tag and will be filled by CSS */}
               <div className="about-img-main"></div> 
                 <div className="about-experience-badge">
                    <span className="exp-year">Est. 2020</span>
