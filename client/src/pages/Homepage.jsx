@@ -4,7 +4,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
 import '../css/HomePage.css';
-import heroBanner from '../assets/homepage.jpg';
 
 const HomePage = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
@@ -44,7 +43,6 @@ const HomePage = () => {
     <main className="home-page luxury-theme">
       {/* Hero Section */}
       <section className="hero-section">
-        <img src={heroBanner} alt="Nike Dunks Collection" className="hero-banner-image" />
         <div className="hero-overlay" />
         <div className="hero-content container">
           <div className="hero-label">Available Now — Exclusive Release</div>
