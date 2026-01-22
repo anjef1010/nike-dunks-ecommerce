@@ -35,4 +35,4 @@ router.put('/update-qty', protect, updateCartItemQty);
 router.post('/clear', protect, clearCart);
 
 
-module.exports = router;
+export default router;

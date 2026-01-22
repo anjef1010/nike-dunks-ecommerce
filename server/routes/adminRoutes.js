@@ -90,4 +90,4 @@ router.put('/orders/:id/status', protect, authorize('admin'), async (req, res) =
 });
 
 
-module.exports = router;
+export default router;

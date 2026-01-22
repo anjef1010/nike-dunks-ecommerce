@@ -1,8 +1,7 @@
-const express = require("express");
-const axios = require("axios");
+import express from "express";
+import axios from "axios";
 const router = express.Router();
 
-// POST /api/payment/khalti/create
 router.post("/create", async (req, res) => {
   const { amount, productIdentity, productName } = req.body;
 
@@ -33,4 +32,4 @@ router.post("/create", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;
