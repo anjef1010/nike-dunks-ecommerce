@@ -65,8 +65,10 @@ export const registerUser = asyncHandler(async (req, res) => {
 // @access  Public
 export const loginUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
+  console.log(`Login attempt for: ${email}`); // <--- ADD THIS
 
   const user = await User.findOne({ email });
+  console.log(`User found: ${user ? 'Yes' : 'No'}`); // <--- ADD THIS
 
   if (user && (await user.matchPassword(password))) {
     sendTokenResponse(user, 200, res);
