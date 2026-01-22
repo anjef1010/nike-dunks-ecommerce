@@ -15,7 +15,7 @@
   align-items: center;
   justify-content: center;
   background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.85)), 
-                    url('../assets/bg.jpg');
+                    url('../assets/bg.jpeg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -148,8 +148,8 @@
   transition: 0.5s ease;
 }
 
-.retail-image-bg { background-image: url('../assets/1.jpg'); }
-.master-image-bg { background-image: url('../assets/2.jpg'); }
+.retail-image-bg { background-image: url('../assets/1.jpeg'); }
+.master-image-bg { background-image: url('../assets/2.jpeg'); }
 
 .comp-card:hover .retail-image-bg, 
 .comp-card:hover .master-image-bg { filter: grayscale(0); }
@@ -176,7 +176,7 @@
 .about-footer-cta {
   padding: 150px 0;
   background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                    url('../assets/About.png');
+                    url('../assets/about.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
